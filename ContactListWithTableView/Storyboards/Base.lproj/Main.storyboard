@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="1764" y="-99"/>
         </scene>
-        <!--Item-->
+        <!--Contacts-->
         <scene sceneID="VaS-s8-Jri">
             <objects>
                 <tableViewController id="krz-5w-wMl" customClass="FullContactListTableViewController" customModule="ContactListWithTableView" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                             <outlet property="delegate" destination="krz-5w-wMl" id="Hb7-ME-Gcc"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="person.fill" catalog="system" id="BJS-e6-rCo"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person" catalog="system" selectedImage="person.fill" id="BJS-e6-rCo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryi-YE-3Oa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,6 +137,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Persons List" id="zGi-lu-Hh1"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BHE-mY-kS5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -151,6 +152,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
