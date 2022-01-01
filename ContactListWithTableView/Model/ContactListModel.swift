@@ -9,10 +9,19 @@ struct Person {
     let name: String
     let surname: String
     let phoneNumber: String
-    let emails: String
+    let email: String
     
     var fullName: String {
         "\(name) \(surname)"
+    }
+    
+    var rowContent: [String] {
+        [phoneNumber, email]
+    }
+    
+    var pituresForRows: [String] {
+       ["phone", "tray"]
+        
     }
     
     static func getPerson() -> [Person] {
@@ -30,7 +39,7 @@ struct Person {
                 name: names[iteration],
                 surname: surnames[iteration],
                 phoneNumber: phoneNumbers[iteration],
-                emails: emails[iteration]
+                email: emails[iteration]
             )
             persons.append(person)
         }

@@ -32,7 +32,7 @@ class FullContactListTableViewController: UITableViewController {
         persons[section].fullName
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        persons[section].rowContent.count
     }
 
     
@@ -41,17 +41,49 @@ class FullContactListTableViewController: UITableViewController {
         let person = persons[indexPath.section]
         var content = cell.defaultContentConfiguration()
         
+        /*
+        Option 1
+         
+        switch indexPath.row {
+        case 0:
+            content.text = person.phoneNumber
+            content.image = UIImage(systemName: person.pituresForRows[0])
+        default:
+            content.text = person.email
+            content.image = UIImage(systemName: person.pituresForRows[1])
+        }
+        */
+        
+        /*
+        Option 2
+         
         switch indexPath.row {
         case 0:
             content.text = person.phoneNumber
             content.image = UIImage(systemName: TitleForImages.phoneNumber.rawValue)
         default:
-            content.text = person.emails
+            content.text = person.email
             content.image = UIImage(systemName: TitleForImages.email.rawValue)
         }
+         */
+        
+        /*
+        Option 3
+         
+        for everyRow in 0...indexPath.row {
+                content.text = person.rowContent[everyRow];
+                content.image = UIImage(systemName: person.pituresForRows[everyRow])
+            }
+         */
+        
+//      Option 4:
+        content.text = person.rowContent[indexPath.row]
+        content.image = UIImage(systemName: person.pituresForRows[indexPath.row])
+        
         cell.contentConfiguration = content
 
         return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

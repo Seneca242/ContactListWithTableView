@@ -10,10 +10,10 @@ class DataManager {
     static let shared = DataManager()
     
     let names = [
-        "Ann", "John", "Mike", "Julia"
+        "Ann", "John", "Mike"
     ]
     let surnames = [
-        "Black", "White", "Gordon", "Smith"
+        "Black", "White", "Gordon", "Smith", "Clinton"
     ]
     let phoneNumber = [
         "12345", "23456", "34567", "45678"
