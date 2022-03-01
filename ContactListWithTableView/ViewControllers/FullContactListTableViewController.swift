@@ -23,15 +23,15 @@ class FullContactListTableViewController: UITableViewController {
         
     }
 
-    // MARK: - Table view data source
+    // MARK: - Tableview data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         persons.count
     }
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        persons[section].fullName
-    }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        persons[section].fullName
+//    }
+     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         persons[section].rowContent.count
     }
 
@@ -86,9 +86,36 @@ class FullContactListTableViewController: UITableViewController {
         
     }
     
+    // MARK: - TableView delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let contentView = UIView()
+        let fullNameLabel = UILabel(
+            frame: CGRect(
+                x: 20,
+                y: -3,
+                width: tableView.frame.width,
+                height: 35
+            )
+        )
+        fullNameLabel.text = persons[section].fullName
+        fullNameLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        fullNameLabel.textColor = .white
+        
+        contentView.addSubview(fullNameLabel)
+        return contentView
+    }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let labelHeight: CGFloat = 35.0
+        return labelHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.backgroundColor = .black
+    }
 }
